@@ -1,0 +1,47 @@
+<!-- Header section -->
+<header>
+  <!-- Link to navigate back to user categories page with a back icon -->
+  <%= link_to user_categories_path(@user), class: "back-icon" do %>
+    <!-- Back icon (could be an icon or text) -->
+  <% end %>
+  
+  <!-- Heading for the current page with the name of the category -->
+  <h2><%= @category.name %></h2>
+  
+  <!-- Display the total amount of expenses for the category -->
+  <p>$ <%= @expenses.sum(:amount) %></p>
+</header>
+
+<!-- Container for the list of expenses -->
+<div class='category-list'>
+  
+  <!-- Loop through each expense in @expenses -->
+  <% @expenses.each do |expense| %>
+  
+    <!-- Expense item container -->
+    <div class="expense-item">
+      
+      <!-- Sub-container for expense details -->
+      <div>
+        <!-- Display the name of the expense -->
+        <p><%= expense.name %></p>
+        
+        <!-- Display the creation date of the expense -->
+        <p class="expense-date"><%= expense.created_at.strftime("%m/%d/%Y") %></p>
+      </div>
+      
+      <!-- Display the amount of the expense -->
+      <p class="amount">$<%= expense.amount %></p>
+      
+      <!-- Display the category name of the expense -->
+      <p><%= expense.category.name %></p>
+    </div>
+    
+  <% end %>
+  
+  <!-- Link to add a new transaction for the current category -->
+  <%= link_to new_user_category_expense_path(@user, @category), class: "add-transaction" do %>
+    <!-- Text for adding a new transaction -->
+    <span>Add Transaction</span>
+  <% end %>
+</div>
