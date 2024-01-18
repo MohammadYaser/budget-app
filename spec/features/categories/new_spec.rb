@@ -29,7 +29,7 @@ RSpec.describe 'Testing Category#new view', type: :feature do
 
     # Assertions for the successful category creation
     expect(page).to have_content('Category was successfully created.')
-    
+
     # Checking the database for the newly created category
     expect(Category.last.name).to eq('Test Category')
     expect(Category.last.icon).to eq('test-icon')
