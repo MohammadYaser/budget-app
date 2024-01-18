@@ -1,0 +1,44 @@
+<!-- Header section -->
+<header>
+  <!-- Link to navigate back to the category expenses page with a back icon -->
+  <%= link_to user_category_expenses_path(@user, @category), class: "back-icon" do %>
+    <!-- Back icon (could be an icon or text) -->
+  <% end %>
+  
+  <!-- Heading for the current page -->
+  <h2>NEW TRANSACTION</h2>
+  
+  <!-- Search icon using Font Awesome -->
+  <i class="fa fa-search"></i>
+</header>
+
+<!-- Container for the form -->
+<div class='category-list'>
+  <div class="form">
+    
+    <!-- Form for creating a new transaction -->
+    <%= form_with(model: [@user, @category, @expense], local: true) do |f| %>
+      
+      <!-- Field for the name of the transaction -->
+      <div>
+        <%= f.label :name %> <br />
+        <%= f.text_field :name, autocomplete: "off" %>
+      </div>
+      
+      <!-- Field for the amount of the transaction -->
+      <div>
+        <%= f.label :amount %> <br />
+        <%= f.text_field :amount %>
+      </div>
+      
+      <!-- Dropdown for selecting the category of the transaction -->
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, @categories, :id, :name %> <br />
+      
+      <!-- Submission button to save the transaction -->
+      <%= f.submit "Save", class: "button" %>
+      
+    <% end %>
+  
+  </div>
+</div>

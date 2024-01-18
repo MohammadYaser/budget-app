@@ -1,0 +1,34 @@
+<header>
+  <!-- Link to navigate back to user categories page -->
+  <%= link_to user_categories_path(@user), class: "back-icon" do %>
+    <!-- Back icon (could be an icon or text) -->
+  <% end %>
+  
+  <!-- Heading for the current page -->
+  <h2 class="heading">ADD CATEGORY</h2>
+</header>
+
+<!-- Container for the category form -->
+<div class='category-list'>
+  <div class="form">
+    <!-- Form for creating a new category -->
+    <%= form_with(model: [@user, @category], local: true, method: :post) do |f| %>
+      <!-- Field for category name -->
+      <div>
+        <%= f.label :name %> <br />
+        <%= f.text_field :name, autocomplete: "off" %>
+      </div>
+      
+      <!-- Field for category icon -->
+      <div>
+        <%= f.label :icon %> <br />
+        <%= f.text_field :icon %>
+      </div>
+      
+      <!-- Submission button to save the category -->
+      <div>
+        <%= f.submit "Save", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

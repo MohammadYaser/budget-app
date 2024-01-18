@@ -1,15 +1,317 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Global styling for all elements */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for the entire page body */
+body {
+  font-family: 'Proxima Nova Light', sans-serif;
+  background-color: #f4f4f4;
+  color: #434b54;
+}
+
+/* Container for the entire application */
+.app-container {
+  width: 377px;
+  margin: 0 auto; /* Center the container on the page */
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Headings styling */
+h1,
+h2 {
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+}
+
+/* Additional styling for specific headings */
+.heading {
+  margin-right: 57px;
+}
+
+.heading-2 h2 {
+  position: absolute;
+  top: 40%;
+  left: 100%;
+  font-family: "Lucida Handwriting";
+}
+
+/* Styling for hyperlinks */
+a {
+  text-decoration: none;
+}
+
+/* Styling for the header section */
+header {
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #3778c2;
+  display: flex;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for buttons */
+.btn {
+  cursor: pointer;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #3778c2;
+  border: none;
+}
+
+/* Styling for the back icon */
+.back-icon::before {
+  color: #fff;
+  font-size: 2.5rem;
+  content: '\2190'; /* Unicode arrow character */
+}
+
+/* Styling for links */
+.links {
+  display: flex;
+  margin-top: 10px;
+  color: #434b54;
+  gap: 12px;
+}
+
+.links a:first-child {
+  border-radius: 5px;
+  margin-left: 30px;
+  border: 1px solid #3778c2;
+  padding: 10px;
+}
+
+.links a:last-of-type {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #3778c2;
+}
+
+.txt {
+  width: 90%;
+}
+
+/* Styling for text input fields */
+.pass-input,
+.name-input,
+.password-input,
+.email-input,
+.newp-input {
+  width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin: 20px;
+}
+
+/* Styling for the "Remember Me" checkbox */
+.remember-me {
+  margin: 10px 20px;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Styling for the login button */
+.login-button {
+  width: 90%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #5fb523;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+/* Styling for the footer section */
+footer {
+  text-align: center;
+  width: 29%;
+  position: fixed;
+  bottom: 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styling for login link in the footer */
+footer a#login {
+  border-radius: 4px;
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  background-color: #3778c2;
+}
+
+/* Styling for signup link in the footer */
+footer a#signup {
+  color: #434b54;
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Styling for the main content container */
+.main {
+  width: 30%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Styling for submit buttons */
+input[type="submit"] {
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  border: none;
+}
+
+/* Styling for "Add Transaction" and "Add Category" buttons */
+.add-transaction,
+.add-category-btn {
+  align-items: center;
+  background-color: #5fb523;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.add-category-btn {
+  margin-bottom: -11px;
+}
+
+/* Styling for generic buttons */
+.button {
+  background-color: #5fb523;
+}
+
+/* Styling for form submission buttons and spans */
+.add-category input[type="submit"],
+span {
+  border: 1px solid #fff;
+  padding: 10px 6rem;
+  font-size: 18px;
+}
+
+/* Styling for the category list */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  height: 90vh;
+  position: relative;
+}
+
+/* Styling for category links */
+.category-link {
+  width: 100%;
+  color: #434b54;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.category-link:hover {
+  background-color: #f4f4f4;
+}
+
+/* Styling for the category container */
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styling for the category icon */
+.category-icon {
+  font-size: 20px;
+}
+
+/* Styling for images */
+img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Styling for the form container */
+.form {
+  width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for text input fields */
+input[type="text"] {
+  padding: 1rem;
+  border-radius: 3%;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+/* Styling for select dropdowns */
+select {
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 10px #0000001a;
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+/* Styling for each expense item in the list */
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Styling for the date of the expense */
+.expense-date {
+  color: #888;
+}
+
+/* Styling for the menu icon */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Styling for the amount section */
+.amount {
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
+}
