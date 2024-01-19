@@ -15,7 +15,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-
   # GET /users/:user_id/categories/new
   def new
     # Initializes a new category instance to be used in the 'new' view.
