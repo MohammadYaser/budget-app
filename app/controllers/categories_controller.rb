@@ -5,8 +5,16 @@ class CategoriesController < ApplicationController
   # GET /users/:user_id/categories
   def index
     # Retrieves all categories and assigns them to the instance variable @categories.
-    @categories = Category.all
+    @categories = Category.includes(:expenses).all
+    @category_totals = {}
+
+    @categories.each do |category|
+      @category_id = category.id
+      @expenses = @user.expenses.includes(:category).where(category: @category_id)
+      @category_totals[@category_id] = @expenses.sum(:amount)
+    end
   end
+
 
   # GET /users/:user_id/categories/new
   def new

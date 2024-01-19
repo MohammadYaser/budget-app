@@ -28,7 +28,7 @@
         
         <!-- Total expense amount for the category -->
         <div class="amount">
-          <p><%= number_to_currency(category.expenses.sum(:amount)) %></p>
+          <p>$ <%= @category_totals[category.id] || 0 %></p>
         </div>
       </div>
     <% end %>
