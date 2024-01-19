@@ -19,7 +19,7 @@ RSpec.describe 'Testing Category#index view', type: :feature do
     # Assuming you have set up @category_totals in the controller
     # Manually set it here for the test
     @category_totals = {
-      @categories[0].id => 250,  # Set the correct total amount for each category
+      @categories[0].id => 250, # Set the correct total amount for each category
       @categories[1].id => 200
     }
   end
@@ -44,7 +44,7 @@ RSpec.describe 'Testing Category#index view', type: :feature do
         expect(page).to have_selector('.category p.expense-date', text: category.created_at.strftime('%m/%d/%Y'))
 
         # Updated assertion to check for the presence of a CSS class
-        expect(page).to have_css('.category .amount p')  # Adjust this selector accordingly
+        expect(page).to have_css('.category .amount p') # Adjust this selector accordingly
       end
     end
   end
