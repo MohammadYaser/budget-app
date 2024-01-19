@@ -37,7 +37,7 @@ This financial management application empowers users to meticulously monitor the
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - ✅ Click [here](https://budget-app-a4a6.onrender.com/) to see the project
-- ✅ Click [here]() to see the video presentation.
+- ✅ Click [here](https://www.loom.com/share/95d309e0e8724b1494b84162b4b413c7) to see the video presentation.
 
 
 ## 🔭 Future Features <a name="future-features"></a>
